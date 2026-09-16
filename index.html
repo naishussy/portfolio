@@ -285,20 +285,20 @@
     .wrap { padding: 0 20px; }
     header nav { gap: 18px; }
     .school { display: none; }
-    .vinyl { aspect-ratio: 100 / 78; }
-    .sleeve { width: 76%; font-size: 3.3cqw; padding: 4cqw 4.6cqw 2.6cqw; }
-    .sleeve-artist, .side, .sleeve .yr { font-size: 2.8cqw; }
-    .sleeve-title { font-size: 6.4cqw; }
-    .sleeve li a { grid-template-columns: 3.8cqw 1fr auto; padding: .55cqw 0; }
-    .record { width: 56%; left: 44%; top: 10%; }
-    .crates { gap: 6px 0; justify-content: space-between; flex-wrap: nowrap; }
-    .mini { width: 56px; font-size: 10.5px; padding: 6px 0; letter-spacing: -0.01em; }
-    .picker { margin-top: 12px; }
-    .mini-disc { width: 38px; height: 38px; }
-    .vinyl { aspect-ratio: 100 / 88; }
-    .sleeve { display: none; }
-    .record { width: 82%; left: 9%; top: 4%; animation: rise 1s cubic-bezier(.22,.8,.25,1) .3s both; }
-    .record.swap { animation: dip .9s ease both; }
+    .player .vinyl { aspect-ratio: auto; position: relative; container-type: inline-size; }
+    .record {
+      position: absolute; left: 50%; width: 50cqw; top: calc(50% - 25cqw);
+      animation: slide-out 1.6s cubic-bezier(.22,.8,.25,1) .5s both;
+    }
+    .record.swap { animation: tuck .9s cubic-bezier(.5,0,.2,1) both; }
+    .sleeve {
+      position: relative; top: auto; left: auto; width: 60%; aspect-ratio: auto; overflow: visible;
+      padding: 10px 10px 4px; font-size: 12px; line-height: 1.25; border-top-width: 4px; z-index: 1;
+    }
+    .sleeve-title { font-size: 14px; }
+    .sleeve-artist, .side, .sleeve .yr { font-size: 10px; }
+    .side { margin-top: 7px; padding-bottom: 3px; }
+    .sleeve li a { grid-template-columns: 13px 1fr auto; gap: 4px; padding: 6px 0; }
   }
 </style>
 </head>
